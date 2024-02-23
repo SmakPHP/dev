@@ -26,3 +26,15 @@ iface enp1s0 inet static
 echo "deb http://deb.debian.org/debian bookworm contrib main
 "
 # > /etc/apt/sources.list
+
+#
+# WireGuard 
+#
+
+# apt install wireguard
+# cp test.conf /etc/wireguard/
+# wg-quick up test
+# wg show
+
+curl ipinfo.io/ip; echo
+
