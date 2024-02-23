@@ -9,7 +9,6 @@
 echo "nameserver 192.168.2.1"
 # > /etc/resolv.conf
 
-
 echo "
 auto enp1s0
 iface enp1s0 inet static
