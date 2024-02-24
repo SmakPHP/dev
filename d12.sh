@@ -1,5 +1,23 @@
 #!/bin/bash
 
+Help()
+{
+   # Display Help
+   echo "Add description of the script functions here."
+   echo
+}
+
+while getopts "s:" option; do
+   case $option in
+      s) # display Help
+         Help
+         exit;;
+     \?) # Invalid option
+         echo "Error: Invalid option"
+         exit;;
+   esac
+done
+
 # Execute bash script from link
 # curl https://raw.githubusercontent.com/smakphp/dev/main/d12.sh | bash -s arg1 arg2
 # curl -O https://raw.githubusercontent.com/smakphp/dev/main/d12.sh && nano d12.sh
