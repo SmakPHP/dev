@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://www.redhat.com/sysadmin/arguments-options-bash-scripts
 
 Help()
 {
