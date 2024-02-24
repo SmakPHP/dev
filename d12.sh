@@ -4,6 +4,11 @@
 # curl https://raw.githubusercontent.com/smakphp/dev/main/d12.sh | bash -s arg1 arg2
 # curl -O https://raw.githubusercontent.com/smakphp/dev/main/d12.sh && nano d12.sh
 
+# Mount USB
+# fdisk -l
+# mkdir /tmp/usb
+# mount /dev/sd... /tmp/usb
+
 # Editing in nano editor
 # CTRL + O / CTRL + X
 
