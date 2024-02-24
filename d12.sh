@@ -20,8 +20,9 @@ while getopts "s:" option; do
 done
 
 # Execute bash script from link
-# curl https://raw.githubusercontent.com/smakphp/dev/main/d12.sh | bash -s arg1 arg2
-# curl -O https://raw.githubusercontent.com/smakphp/dev/main/d12.sh && nano d12.sh
+# wget https://t.ly/p7KTm -O d12.sh && nano d12.sh
+# wget https://raw.githubusercontent.com/smakphp/dev/main/d12.sh
+# sh d12.sh -s test
 
 # Mount USB
 # fdisk -l
