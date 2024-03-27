@@ -50,3 +50,5 @@ echo $username | tee -a /etc/vsftpd.userlist
 
 systemctl restart vsftpd
 systemctl status vsftpd
+
+tail -20 /var/log/vsftpd.log
