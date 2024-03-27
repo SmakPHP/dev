@@ -52,3 +52,4 @@ systemctl restart vsftpd
 systemctl status vsftpd
 
 tail -20 /var/log/vsftpd.log
+# userdel share
