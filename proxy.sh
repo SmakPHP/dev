@@ -9,6 +9,8 @@ sed -i 's/^#http_access a.*/http_access allow localnet/g' /etc/squid/squid.conf
 systemctl restart squid
 systemctl status squid
 
+# udp_incoming_address 127.0.0.1
+
 # access_log stdio:/var/log/squid/access.log squidguard
 # cache_store_log stdio:/var/log/squid/store.log
 # cache_log /var/log/squid/cache.log
