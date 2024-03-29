@@ -26,11 +26,11 @@ systemctl status squid
 # # Domains Blacklist for Squid\
 # acl blackweb dstdomain "/etc/squid/blackweb.txt"\
 # http_access deny blackweb' /etc/squid/squid.conf
-
-
+#
 # https://adblockplus.org/
 # https://github.com/jamesmacwhite/squidguard-adblock
 # https://albertxyc.livejournal.com/10294.html
+
 
 # Set start timeout
 # mcedit /lib/systemd/system/squid.service
