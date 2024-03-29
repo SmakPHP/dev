@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Network Manager (Disable IPv6)
 # systemctl --type=service --state=running
 
 systemctl stop cups
