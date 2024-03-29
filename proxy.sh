@@ -3,6 +3,7 @@
 # SSL Bumping in Squid
 # https://notdev.ru/linux/proxy/squid-install.html
 
+# watch -n 1 tail -10 /var/log/squid/access.log
 
 apt install -y squid-openssl
 sed -i 's/^#http_access a.*/http_access allow localnet/g' /etc/squid/squid.conf
