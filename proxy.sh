@@ -29,7 +29,7 @@ sed -i 's/^#bind-interfaces/bind-interfaces/g' /etc/dnsmasq.conf
 sed -i 's/^#conf-file=\/e.*/conf-file=\/etc\/dnsmasq-hosts.conf/g' /etc/dnsmasq.conf
 sed -i 's/^#expand-hosts/expand-hosts/g' /etc/dnsmasq.conf
 
-# https://www.dmosk.ru/miniinstruktions.php?mini=dnsmasq
+# https://github.com/lynxthecat/adblock-lean
 # https://russianpenguin.ru/2016/08/26/openwrt-блокировка-рекламы/
 curl -SLso /etc/dnsmasq-hosts.conf https://raw.githubusercontent.com/notracking/hosts-blocklists/master/dnsmasq/dnsmasq.blacklist.txt
 
