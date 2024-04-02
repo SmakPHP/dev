@@ -6,6 +6,7 @@
 # apt install ./name.deb
 # echo "
 # deb [trusted=yes] file:/media/user/Debian%20_/ bookworm contrib main non-free-firmware
+# deb https://deb.debian.org/debian bookworm contrib main non-free-firmware
 # " > /etc/apt/sources.list
 
 systemctl stop cups
