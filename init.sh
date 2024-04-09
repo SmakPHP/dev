@@ -20,3 +20,5 @@ systemctl mask cups-browsed
 systemctl stop avahi-daemon
 systemctl disable avahi-daemon
 systemctl mask avahi-daemon
+
+# https://wow-only.ru/2011-04-14-14-57-54/60-2011-07-22-18-49-04/1008-web-камера-зеркальное-изображение.html
