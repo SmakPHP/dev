@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Display run privoxy: http://p.p/
-echo "Run privoxy: ..."
-
 apt install privoxy
 
 sed -i 's/^listen-address  1.*/listen-address  192.168.1.1/g' /etc/privoxy/config
