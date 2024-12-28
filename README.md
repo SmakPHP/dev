@@ -24,7 +24,7 @@ git config --global user.name AndreyMs
 git config --global user.email apmasterov@gmail.com
 
 cd C:/Dev
-git clone https://github.com/SmakPHP/dev.git
+git clone git@github.com:SmakPHP/dev.git
 
 git status
 git pull origin main
