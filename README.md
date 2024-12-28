@@ -1,4 +1,4 @@
-### dev
+## Git
 
 ```bash
 # Добавление ключа
@@ -31,6 +31,23 @@ git pull origin main
 git add -A
 git commit -m "fix"
 git push origin main
+```
+
+## Установка Node.js с использованием NVM(Node Version Manager):
+
+```bash
+apt update
+apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.bashrc # (или перезагрузить терминал)
+nvm --version
+nvm install 20
+nvm use 20
+
+cd /git/frontend
+npm install -g @angular/cli
+
+https://github.com/nvm-sh/nvm
 ```
 
 ## Links (+Ctrl)
