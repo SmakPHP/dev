@@ -47,7 +47,7 @@ nvm use 20
 cd /git/frontend
 npm install -g @angular/cli
 
-https://github.com/nvm-sh/nvm
+# https://github.com/nvm-sh/nvm
 ```
 
 ## Links (+Ctrl)
