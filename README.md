@@ -34,4 +34,4 @@ git push origin main
 ```
 
 ## Links
-1. [Markdown Preview](https://markdownlivepreview.com/)
+1. [Markdown Preview](https://markdownlivepreview.com/){:target="_blank"}
