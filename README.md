@@ -33,5 +33,5 @@ git commit -m "fix"
 git push origin main
 ```
 
-## Links
+## Links (+Ctrl)
 1. [Markdown Preview](https://markdownlivepreview.com/)
