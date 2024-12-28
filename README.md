@@ -42,7 +42,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source ~/.bashrc # (или перезагрузить терминал)
 nvm --version
 nvm install 20
+# nvm uninstall 20
 nvm use 20
+
+node -v
+npm -v
 
 cd /git/frontend
 npm install -g @angular/cli
