@@ -33,7 +33,7 @@ git commit -m "fix"
 git push origin main
 ```
 
-## Установка Node.js с использованием NVM(Node Version Manager):
+## Установка Node, Angular с использованием NVM(Node Version Manager):
 
 ```bash
 apt update
@@ -49,7 +49,12 @@ node -v
 npm -v
 
 cd /git/frontend
-npm install -g @angular/cli
+# rm -rf node_modules package-lock.json
+# npm uninstall -g @angular/cli
+npm install -g @angular/cli@13
+npm install @angular-devkit/build-angular
+
+ng version
 
 # https://github.com/nvm-sh/nvm
 ```
