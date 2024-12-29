@@ -52,7 +52,7 @@ cd /git/frontend
 # rm -rf node_modules package-lock.json
 # npm uninstall -g @angular/cli
 npm install -g @angular/cli@13
-npm install @angular-devkit/build-angular
+npm install -g @angular-devkit/build-angular
 
 ng version
 
