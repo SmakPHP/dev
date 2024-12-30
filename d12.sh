@@ -6,7 +6,7 @@
 apt update -y
 apt install htop atop mc -y
 
-sed -i 's/^#*ClientAliveInterval.*/ClientAliveInterval 60/g' /etc/ssh/sshd_config
+sed -i 's/^#*ClientAliveInterval.*/ClientAliveInterval 20/g' /etc/ssh/sshd_config
 sed -i 's/^#*ClientAliveCountMax.*/ClientAliveCountMax 10/g' /etc/ssh/sshd_config
 systemctl restart sshd
 
