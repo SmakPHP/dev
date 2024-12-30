@@ -33,7 +33,7 @@ git commit -m "fix"
 git push origin main
 ```
 
-## Установка Node, Angular с использованием NVM(Node Version Manager):
+## Установка Node.js, Angular с использованием NVM(Node Version Manager):
 
 ```bash
 apt update
@@ -57,7 +57,7 @@ npm install --legacy-peer-deps
 ng version
 ```
 
-## Установка зависимостей и полезные команды
+## Установка зависимостей и полезные команды Node.js:
 
 ```bash
 # https://habr.com/ru/companies/gazprombank/articles/725992/
