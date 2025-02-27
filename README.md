@@ -12,7 +12,7 @@
 
 # Windows
 ssh-keygen -t ed25519 -C "apmasterov@gmail.com"
-cat ~/.ssh/id_ed25519.pub
+type .ssh\id_ed25519.pub
 
 # Linux
 ssh-keygen -t ed25519 -C "apmasterov@gmail.com"
@@ -31,6 +31,10 @@ git pull origin main
 git add -A
 git commit -m "fix"
 git push origin main
+
+# Создание ключа ssh-rsa
+ssh-keygen -t rsa -b 4096
+type .ssh\id_rsa.pub
 ```
 
 ## Установка Node.js, Angular с использованием NVM(Node Version Manager):
