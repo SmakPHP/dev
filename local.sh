@@ -27,7 +27,7 @@ head -10 /root/file.csv
 tail -10 /root/file.csv
 
 # Сводная информация
-inxi -p -m -s -B
+inxi -p -m -s -i -B
 
 # Диск
 lsblk
