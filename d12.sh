@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Execute bash script from link
-# wget -O - https://raw.githubusercontent.com/smakphp/dev/main/d12.sh | bash
+# wget -O - https://raw.githubusercontent.com/smakphp/dev/main/d13.sh | bash
+# sshpass -p "12345" ssh -D 127.0.0.1:1080 root@1.2.3.4
 
 apt update -y
 apt install htop atop mc -y
