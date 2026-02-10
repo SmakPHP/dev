@@ -32,6 +32,11 @@ inxi -p -m -s -B
 # Диск
 lsblk
 
+# Файлы
+tar -xvzf file.tar.gz
+chown -Rv test:test /opt/java
+chmod -Rv 755 /opt/java
+
 
 
 
