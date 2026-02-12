@@ -1,6 +1,9 @@
 # Run:
 # python geo2.py
 # gunicorn -b 0.0.0.0:80 geo2:app
+# pgrep -f "gunicorn -b 0.0.0.0:80 geo2:app"
+# pkill -TERM gunicorn
+# pkill -QUIT gunicorn
 
 # https://dvmn.org/encyclopedia/web-server/deploy-wsgi-gunicorn-django-flask/
 # https://github.com/P3TERX/GeoLite.mmdb
@@ -9,7 +12,7 @@
 # wget https://git.io/GeoLite2-City.mmdb
 # pip install gunicorn flask geoip2
 
-from flask import Flask, request
+from flask import Flask, request, Response
 import geoip2.database
 import os
 
@@ -34,6 +37,12 @@ def add_to_filter(cidr):
 @app.route("/")
 def index():
     return Response("y2be.ru"), 200
+
+@app.route('/db_ip')
+def db_ip():
+    with open(FILTER_FILE, 'r', encoding='utf-8') as f:
+        content = f.read()
+    return f"<html><body><pre>{content}</pre></body></html>"
 
 @app.route('/check_ip')
 def check_ip():
