@@ -1,0 +1,63 @@
+# Run:
+# python geo2.py
+# gunicorn -b 0.0.0.0:80 geo2:app
+
+# https://dvmn.org/encyclopedia/web-server/deploy-wsgi-gunicorn-django-flask/
+# https://github.com/P3TERX/GeoLite.mmdb
+
+# wget https://git.io/GeoLite2-ASN.mmdb
+# wget https://git.io/GeoLite2-City.mmdb
+# pip install gunicorn flask geoip2
+
+from flask import Flask, request
+import geoip2.database
+import os
+
+app = Flask(__name__)
+
+# Пути к файлам
+ASN_DB = 'GeoLite2-ASN.mmdb'
+FILTER_FILE = 'filter.txt'
+
+def add_to_filter(cidr):
+    """Добавляет CIDR в файл, если его там нет."""
+    if not os.path.exists(FILTER_FILE):
+        open(FILTER_FILE, 'w').close()
+
+    with open(FILTER_FILE, 'r+') as f:
+        lines = f.read().splitlines()
+        if cidr not in lines:
+            f.write(cidr + '\n')
+            return True
+    return False
+
+@app.route("/")
+def index():
+    return Response("y2be.ru"), 200
+
+@app.route('/check_ip')
+def check_ip():
+    # Берем IP из параметров запроса (?ip=1.2.3.4) или определяем IP посетителя
+    ip = request.args.get('ip') or request.remote_addr
+    
+    try:
+        with geoip2.database.Reader(ASN_DB) as reader:
+            response = reader.asn(ip)
+            cidr = str(response.network) # Получаем маску, например 2.60.160.0/19
+            provider = response.autonomous_system_organization
+
+            added = add_to_filter(cidr)
+            
+            status = f"Добавлено: {cidr}" if added else "Уже существует"
+            return {
+                "ip": ip,
+                "cidr": cidr,
+                "provider": provider,
+                "status": status
+            }
+    except Exception as e:
+        return {"error": str(e)}, 400
+
+if __name__ == '__main__':
+    # app.run(port=5000)
+    app.run(debug=True)
