@@ -37,60 +37,33 @@ ssh-keygen -t rsa -b 4096
 type .ssh\id_rsa.pub
 ```
 
-## Установка Node.js, Angular с использованием NVM(Node Version Manager):
+## Pyutube:
 
 ```bash
-apt update
-apt install curl
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-source ~/.bashrc # (или перезагрузить терминал)
-nvm --version
-nvm install 18
-# nvm uninstall 18
-nvm use 18
+# https://pypi.org/project/pyutube/
+# https://pypi.org/project/pytubefix/
+# https://pypi.org/project/pybalt/
 
-node -v
-npm -v
+# Создание виртуального окружения (venv)
+apt update && apt install python3-full python3-venv
+python3 -m venv ~/pybalt_env
+source ~/pybalt_env/bin/activate
+which python
+deactivate
 
-cd /git/frontend
-# rm -rf node_modules package-lock.json
-# npm uninstall -g @angular/cli
+pip install --upgrade pip
+pip install PyYAML dotenv click aiohttp aiofiles requests fastapi uvicorn prompt_toolkit
+pip install pybalt -U
+pip show pybalt
 
-# Установка Angular согласно package.json
-npm install --legacy-peer-deps
-ng version
-```
+# http://1.2.3.4:8080/ui
+cobalt --api-port 8080 --api-start
+cobalt --api-status
+cobalt --api-stop
 
-## Установка зависимостей и полезные команды Node.js:
-
-```bash
-# https://habr.com/ru/companies/gazprombank/articles/725992/
-# https://github.com/nvm-sh/nvm
-
-# Пакет @agm/core@3.0.0-beta.0 требует для своей работы версии @angular/common, 
-# которые соответствуют диапазону версий ^9.1.0 || ^10.0.0. 
-# Это означает, что подойдут следующие версии:
-# Angular 9.x: любая версия, начиная с 9.1.0 и выше, но ниже 10.0.0.
-# Angular 10.x: любая версия, начиная с 10.0.0 и выше, но ниже 11.0.0.
-
-# Установленные пакеты
-npm list --depth=0 # (list -g глобальные)
-
-# Проверка отсутствующих пакетов
-npm outdated
-
-# Удалить все неиспользуемые пакеты и очистить проект
-npm prune
-
-# Установка всех зависимостей, указанных в package.json
-npm install --legacy-peer-deps
-
-# Просмотр требующихся зависимостей для данной версии пакета
-npm info @katoid/angular-grid-layout@2.1.0 peerDependencies
-
-# Просмотр списока версий пакета
-# https://www.npmjs.com/package/@agm/core?activeTab=versions
-npm show @katoid/angular-grid-layout versions --json
+cobalt -c
+cobalt "https://youtube.com/watch?v=DG2QqcHwNdE" -r -vQ max
+cobalt "https://youtube.com/watch?v=DG2QqcHwNdE" -r -vQ max -fp "C:\Users\Trait\Videos\my_video.mp4"
 ```
 
 ## Links (+Ctrl)
