@@ -37,7 +37,7 @@ ssh-keygen -t rsa -b 4096
 type .ssh\id_rsa.pub
 ```
 
-## Pyutube:
+## Pyutube
 
 ```bash
 # https://pypi.org/project/pyutube/
