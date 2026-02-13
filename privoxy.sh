@@ -56,3 +56,35 @@ useradd -r -s /bin/false smak
 passwd smak
 
 curl --socks5-hostname smak:pw@1.2.3.4:1080 ipinfo.io
+
+#
+# Aвторизации Dante через отдельный файл PAM
+#
+
+apt install libpam-pwdfile whois
+
+tee /etc/danted.conf <<EOF
+# Метод авторизации PAM
+socksmethod: pam.username
+clientmethod: none
+
+socks pass {
+    from: 0.0.0.0/0 to: 0.0.0.0/0
+    pamservicename: sockd
+    command: connect
+    log: error connect disconnect
+}
+EOF
+
+# Заменить password на свой
+# mkpasswd -m sha-512 password
+# mkdir /etc/dante + 'EOF' для пароля
+tee /etc/dante/passwd <<'EOF'
+smak:$ ...
+EOF
+
+# Настройка PAM для Dante
+tee /etc/pam.d/sockd <<EOF
+auth    required pam_pwdfile.so pwdfile /etc/dante/passwd
+account required pam_permit.so
+EOF
