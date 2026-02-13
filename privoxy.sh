@@ -13,7 +13,7 @@ systemctl enable privoxy
 
 
 #
-# Dante
+# Dante v1.4.4
 #
 
 apt purge dante-server
