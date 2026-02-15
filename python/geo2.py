@@ -1,6 +1,6 @@
 # Run:
 # python geo2.py
-# gunicorn -b 0.0.0.0:80 geo2:app
+# gunicorn -b 0.0.0.0:88 geo2:app
 # pgrep -f "gunicorn -b 0.0.0.0:80 geo2:app"
 # pkill -TERM gunicorn
 # pkill -QUIT gunicorn
