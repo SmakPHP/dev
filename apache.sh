@@ -55,3 +55,8 @@ GRANT ALL ON tgspot.* TO 'tgspot'@'localhost';
 FLUSH PRIVILEGES;
 
 """
+
+
+nginx -V
+apt install certbot python3-certbot-nginx -y
+certbot --nginx -d y2be.ru
