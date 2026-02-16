@@ -11,17 +11,17 @@
 # SSH-ключи не используются в этом случае !
 
 # Windows
-ssh-keygen -t ed25519 -C "apmasterov@gmail.com"
+ssh-keygen -t ed25519 -C "a@gmail.com"
 type .ssh\id_ed25519.pub
 
 # Linux
-ssh-keygen -t ed25519 -C "apmasterov@gmail.com"
+ssh-keygen -t ed25519 -C "a@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 
 git config --global user.name AndreyMs
-git config --global user.email apmasterov@gmail.com
+git config --global user.email a@gmail.com
 
 cd C:/Dev
 git clone git@github.com:SmakPHP/dev.git
