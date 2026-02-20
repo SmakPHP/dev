@@ -18,7 +18,7 @@ systemctl enable privoxy
 
 apt purge dante-server
 
-mkdir dante
+mkdir dante & cd dante
 wget -r -np -nH --cut-dirs=5 -R "index.html*" https://ftp.debian.org/debian/pool/main/d/dante/
 rm -rf /root/dante/*_{arm64,i386,loong64,ppc64el,riscv64,s390x,armhf,armel,mips64el,mipsel}.deb
 
