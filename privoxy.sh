@@ -24,7 +24,9 @@ rm -rf /root/dante/*_{arm64,i386,loong64,ppc64el,riscv64,s390x,armhf,armel,mips6
 
 apt install ./dante-server_1.4.4+dfsg-1_*.deb
 
+apt install net-tools -y
 ifconfig -a
+
 sudo ufw allow 1080/tcp
 
 tee /etc/danted.conf <<EOF
