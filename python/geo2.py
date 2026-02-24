@@ -1,5 +1,8 @@
-# Run:
-# python geo2.py
+# Run
+
+# mkdir geo2 & cd geo2
+# python3 -m venv ~/geo2
+# source ~/geo2/bin/activate
 # gunicorn -b 0.0.0.0:88 geo2:app
 # pgrep -f "gunicorn -b 0.0.0.0:88 geo2:app"
 # pkill -TERM gunicorn
@@ -7,11 +10,10 @@
 
 # https://dvmn.org/encyclopedia/web-server/deploy-wsgi-gunicorn-django-flask/
 # https://github.com/P3TERX/GeoLite.mmdb
-
 # wget https://git.io/GeoLite2-ASN.mmdb
 # wget https://git.io/GeoLite2-City.mmdb
-# pip install gunicorn flask geoip2
 
+# pip install gunicorn flask geoip2
 from flask import Flask, request, Response
 import geoip2.database
 import os
