@@ -23,9 +23,10 @@ app = Flask(__name__)
 # Пути к файлам
 ASN_DB = 'GeoLite2-ASN.mmdb'
 FILTER_FILE = 'filter.txt'
+ADD_FILE = '/etc/danted.conf'
 
 def add_to_filter(cidr):
-    """Добавляет CIDR в файл, если его там нет."""
+    # Добавляет CIDR в файл, если его там нет
     if not os.path.exists(FILTER_FILE):
         open(FILTER_FILE, 'w').close()
 
@@ -33,6 +34,20 @@ def add_to_filter(cidr):
         lines = f.read().splitlines()
         if cidr not in lines:
             f.write(cidr + '\n')
+
+            # Добавляем запись в конфиг
+            with open(ADD_FILE, 'r') as f:
+                lines = f.readlines()
+            last_index = -1
+            for i, line in enumerate(lines):
+                if line.strip().startswith('client pass'):
+                    last_index = i
+            if last_index != -1:
+                add = 'client pass { from: ' + cidr + ' to: 0.0.0.0/0 }\n'
+                lines.insert(last_index + 1, add)
+                with open(ADD_FILE, 'w') as f:
+                    f.writelines(lines)
+
             return True
     return False
 
