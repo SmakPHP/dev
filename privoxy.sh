@@ -91,3 +91,9 @@ tee /etc/pam.d/sockd <<EOF
 auth    required pam_pwdfile.so pwdfile /etc/dante/passwd
 account required pam_permit.so
 EOF
+
+# Перезапуск при изменении конфига
+apt install incron
+echo "root" | sudo tee -a /etc/incron.allow
+incrontab -e
+/etc/danted.conf IN_CLOSE_WRITE /bin/systemctl restart danted
