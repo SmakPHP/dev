@@ -20,6 +20,7 @@ sed -i 's/^#*ClientAliveCountMax.*/ClientAliveCountMax 10/g' /etc/ssh/sshd_confi
 systemctl restart sshd
 
 # Отключение IPv6
+# удалить из /etc/resolv.conf
 mcedit /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1"
 update-grub & reboot
