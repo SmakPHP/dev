@@ -5,14 +5,12 @@
 # sshpass -p "12345" ssh -D 127.0.0.1:1080 root@1.2.3.4
 
 # Активация SSH-сервера
+# systemctl start|enable sshd
 apt install openssh-server
-systemctl start sshd
-systemctl enable ssh
-
-mcedit /etc/ssh/sshd_config
 # PermitRootLogin yes
 # PasswordAuthentication yes
 # PermitEmptyPasswords no
+mcedit /etc/ssh/sshd_config
 
 apt update -y
 apt install htop atop mc -y
@@ -20,6 +18,12 @@ apt install htop atop mc -y
 sed -i 's/^#*ClientAliveInterval.*/ClientAliveInterval 20/g' /etc/ssh/sshd_config
 sed -i 's/^#*ClientAliveCountMax.*/ClientAliveCountMax 10/g' /etc/ssh/sshd_config
 systemctl restart sshd
+
+# Отключение IPv6
+mcedit /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1"
+update-grub & reboot
+
 
 
 """
