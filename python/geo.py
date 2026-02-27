@@ -1,12 +1,11 @@
-# Run:
+# Run
 # python geo.py
 
 # https://github.com/P3TERX/GeoLite.mmdb
-
 # wget https://git.io/GeoLite2-ASN.mmdb
 # wget https://git.io/GeoLite2-City.mmdb
-# pip install geoip2
 
+# pip install geoip2
 import geoip2.database
 import ipaddress
 
